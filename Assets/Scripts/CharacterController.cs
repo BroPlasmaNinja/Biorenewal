@@ -5,12 +5,11 @@ using UnityEngine;
 public class CharacterController : MonoBehaviour
 {
     [SerializeField] private GameObject HeroSprite;
-    [SerializeField] private float speed = 10.0f;
+    [SerializeField] private float speed = CharacterState.speed;
     [SerializeField] private float runMod { get { return Input.GetKey(KeyCode.LeftShift) ? _runMod : 0f; } }
     private float _runMod = 0.2f;
     private Vector2 CenterOfScreen { get { return new Vector2(Screen.width/2, Screen.height/2); } }
     private Vector2 CursorRelativeOfHero { get { return new Vector2 (Input.mousePosition.x, Input.mousePosition.y)-CenterOfScreen; } }
-
     private Rigidbody2D rigidbody;
 
     private void Awake()
